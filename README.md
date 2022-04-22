@@ -9,3 +9,7 @@
 ### Code quality
 
 [![Code Quality Status](https://github.com/NickBGor/frontend-project-lvl1/workflows/lint/badge.svg)](https://github.com/NickBGor/frontend-project-lvl1/actions)
+
+### Brain even
+
+[![asciicast](https://asciinema.org/a/CtNwkhL1q9ZwMApFwqDkltG6w.svg)](https://asciinema.org/a/CtNwkhL1q9ZwMApFwqDkltG6w)
