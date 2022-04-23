@@ -6,5 +6,6 @@ export default {
     { operator: '*', action: (a, b) => a * b },
   ],
   MIN_NUMBER: 1,
-  MAX_NUMBER: 100,
+  MAX_NUMBER: 10,
+  PROGRESSION_LENGHT: 10,
 };
