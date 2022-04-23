@@ -3,12 +3,13 @@ env:
   node: true
 
 extends:
-  - "airbnb-base"
+  - 'airbnb-base'
 
 parserOptions:
   ecmaVersion: latest
 
 rules:
+  object-curly-newline: 0
   no-console: 0
   import/extensions:
     - error
