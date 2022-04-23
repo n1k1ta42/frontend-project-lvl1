@@ -15,6 +15,23 @@
 Это репозиторий содержащий первый проект из професси Фронтенд разработчик в онлайн школе хекслет.
 Проект содержит в себе 5 различных математических консольных игр.
 
+#### Запуск
+
+Для локального запуска проекта, но компьютере должен быть установлен nodejs.
+Запуск игр выполняется командой
+
+```
+make <название-игры>
+```
+
+Названия имеющийся игр:
+
+- brain-calc
+- brain-even
+- brain-gcd
+- brain-prime
+- brain-progression
+
 ### Brain even
 
 [![asciicast](https://asciinema.org/a/rmUOgTeyRTbJqZrLXuFtTRq3T.svg)](https://asciinema.org/a/rmUOgTeyRTbJqZrLXuFtTRq3T)
