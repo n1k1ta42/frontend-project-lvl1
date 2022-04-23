@@ -10,6 +10,11 @@
 
 [![Code Quality Status](https://github.com/NickBGor/frontend-project-lvl1/workflows/lint/badge.svg)](https://github.com/NickBGor/frontend-project-lvl1/actions)
 
+### Описание
+
+Это репозиторий содержащий первый проект из професси Фронтенд разработчик в онлайн школе хекслет.
+Проект содержит в себе 5 различных математических консольных игр.
+
 ### Brain even
 
 [![asciicast](https://asciinema.org/a/rmUOgTeyRTbJqZrLXuFtTRq3T.svg)](https://asciinema.org/a/rmUOgTeyRTbJqZrLXuFtTRq3T)
@@ -25,3 +30,7 @@
 ### Brain progression
 
 [![asciicast](https://asciinema.org/a/AEpMl6ptIJRNK9al2qNMOoYDf.svg)](https://asciinema.org/a/AEpMl6ptIJRNK9al2qNMOoYDf)
+
+## Brain prime
+
+[![asciicast](https://asciinema.org/a/e6Rom5MyxlAVK7JnRmloQiMG8.svg)](https://asciinema.org/a/e6Rom5MyxlAVK7JnRmloQiMG8)

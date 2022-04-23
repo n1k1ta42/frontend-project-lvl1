@@ -9,7 +9,6 @@ parserOptions:
   ecmaVersion: latest
 
 rules:
-  object-curly-newline: 0
   no-console: 0
   import/extensions:
     - error

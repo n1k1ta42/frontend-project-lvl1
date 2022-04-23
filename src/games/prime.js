@@ -1,16 +1,14 @@
-import constants from '../constants.js';
 import getNameAndGreet from '../cli.js';
 import getRandomInt from '../utils/getRandomInt.js';
 import checkGame from '../utils/checkGame.js';
 import getUserAnswer from '../utils/getUserAnswer.js';
 import showQuestion from '../utils/showQuestion.js';
-import gcd from '../utils/gcd.js';
+import isPrime from '../utils/isPrime.js';
 
 function game(name) {
-  const number1 = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
-  const number2 = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
-  const question = `${number1} ${number2}`;
-  const answer = String(gcd(number1, number2));
+  const number = getRandomInt(1, 100);
+  const answer = isPrime(Number(number)) ? 'yes' : 'no';
+  const question = String(number);
   showQuestion(question);
   const userAnswer = getUserAnswer();
 
@@ -22,8 +20,8 @@ function game(name) {
   });
 }
 
-export default function gcdGame() {
+export default function primeGame() {
   const name = getNameAndGreet();
-  console.log('Find the greatest common divisor of given numbers.');
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   game(name);
 }

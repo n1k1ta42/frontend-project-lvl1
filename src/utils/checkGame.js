@@ -2,7 +2,9 @@ import constants from '../constants.js';
 
 let gameCount = 0;
 
-const checkGame = ({ userAnswer, answer, gameFn, name }) => {
+const checkGame = ({
+  userAnswer, answer, gameFn, name,
+}) => {
   if (userAnswer === answer) {
     console.log('Correct!');
     gameCount += 1;
