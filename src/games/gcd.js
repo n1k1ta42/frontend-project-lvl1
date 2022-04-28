@@ -6,7 +6,7 @@ import getUserAnswer from '../utils/getUserAnswer.js';
 import showQuestion from '../utils/showQuestion.js';
 import gcd from '../utils/gcd.js';
 
-function game(name) {
+const game = (name) => {
   const number1 = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
   const number2 = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
   const question = `${number1} ${number2}`;
@@ -20,10 +20,12 @@ function game(name) {
     gameFn: game,
     name,
   });
-}
+};
 
-export default function gcdGame() {
+const gcdGame = () => {
   const name = getNameAndGreet();
   console.log('Find the greatest common divisor of given numbers.');
   game(name);
-}
+};
+
+export default gcdGame;

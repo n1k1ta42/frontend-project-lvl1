@@ -6,7 +6,7 @@ import checkGame from '../utils/checkGame.js';
 import getUserAnswer from '../utils/getUserAnswer.js';
 import showQuestion from '../utils/showQuestion.js';
 
-function game(name) {
+const game = (name) => {
   const firstNumber = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
   const secondNumber = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
   const { operator, action } = getRandomSign(constants.SIGNS);
@@ -24,10 +24,12 @@ function game(name) {
     gameFn: game,
     name,
   });
-}
+};
 
-export default function calc() {
+const calc = () => {
   const name = getNameAndGreet();
   console.log('What is the result of the expression?');
   game(name);
-}
+};
+
+export default calc;

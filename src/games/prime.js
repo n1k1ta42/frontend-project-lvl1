@@ -5,7 +5,7 @@ import getUserAnswer from '../utils/getUserAnswer.js';
 import showQuestion from '../utils/showQuestion.js';
 import isPrime from '../utils/isPrime.js';
 
-function game(name) {
+const game = (name) => {
   const number = getRandomInt(1, 100);
   const answer = isPrime(Number(number)) ? 'yes' : 'no';
   const question = String(number);
@@ -18,10 +18,12 @@ function game(name) {
     gameFn: game,
     name,
   });
-}
+};
 
-export default function primeGame() {
+const primeGame = () => {
   const name = getNameAndGreet();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   game(name);
-}
+};
+
+export default primeGame;

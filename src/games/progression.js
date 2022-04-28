@@ -6,7 +6,7 @@ import getUserAnswer from '../utils/getUserAnswer.js';
 import showQuestion from '../utils/showQuestion.js';
 import buildProgression from '../utils/buildProgression.js';
 
-function game(name) {
+const game = (name) => {
   const lastInderInProgression = constants.PROGRESSION_LENGHT - 1;
   const firstElem = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
   const step = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
@@ -24,10 +24,12 @@ function game(name) {
     gameFn: game,
     name,
   });
-}
+};
 
-export default function progressionGame() {
+const progressionGame = () => {
   const name = getNameAndGreet();
   console.log('What number is missing in the progression?');
   game(name);
-}
+};
+
+export default progressionGame;
