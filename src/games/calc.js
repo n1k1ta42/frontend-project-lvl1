@@ -1,35 +1,28 @@
 import constants from '../constants.js';
-import getNameAndGreet from '../cli.js';
 import getRandomInt from '../utils/getRandomInt.js';
 import getRandomSign from '../utils/getRandomSign.js';
-import checkGame from '../utils/checkGame.js';
-import getUserAnswer from '../utils/getUserAnswer.js';
-import showQuestion from '../utils/showQuestion.js';
+import runGame from '../index.js';
 
-const game = (name) => {
+const mapSignToOperator = {
+  '+': (a, b) => a + b,
+  '-': (a, b) => a - b,
+  '*': (a, b) => a * b,
+};
+
+const gameConditions = () => {
   const firstNumber = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
   const secondNumber = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
-  const { operator, action } = getRandomSign(constants.SIGNS);
-  const answer = String(action(firstNumber, secondNumber));
+  const operatorSign = getRandomSign(Object.keys(mapSignToOperator));
+  const operator = mapSignToOperator[operatorSign];
 
-  const expression = `${firstNumber} ${operator} ${secondNumber}`;
-
-  showQuestion(expression);
-
-  const userAnswer = getUserAnswer();
-
-  checkGame({
-    userAnswer,
-    answer,
-    gameFn: game,
-    name,
-  });
+  return {
+    question: `${firstNumber} ${operatorSign} ${secondNumber}`,
+    answer: String(operator(firstNumber, secondNumber)),
+  };
 };
 
-const calc = () => {
-  const name = getNameAndGreet();
-  console.log('What is the result of the expression?');
-  game(name);
+const start = () => {
+  runGame('What is the result of the expression?', gameConditions);
 };
 
-export default calc;
+export default start;

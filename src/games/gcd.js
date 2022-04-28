@@ -1,31 +1,21 @@
 import constants from '../constants.js';
-import getNameAndGreet from '../cli.js';
+import runGame from '../index.js';
 import getRandomInt from '../utils/getRandomInt.js';
-import checkGame from '../utils/checkGame.js';
-import getUserAnswer from '../utils/getUserAnswer.js';
-import showQuestion from '../utils/showQuestion.js';
-import gcd from '../utils/gcd.js';
 
-const game = (name) => {
+const gcd = (a, b) => (b === 0 ? a : gcd(b, a % b));
+
+const gameConditions = () => {
   const number1 = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
   const number2 = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
-  const question = `${number1} ${number2}`;
-  const answer = String(gcd(number1, number2));
-  showQuestion(question);
-  const userAnswer = getUserAnswer();
 
-  checkGame({
-    userAnswer,
-    answer,
-    gameFn: game,
-    name,
-  });
+  return {
+    question: `${number1} ${number2}`,
+    answer: String(gcd(number1, number2)),
+  };
 };
 
-const gcdGame = () => {
-  const name = getNameAndGreet();
-  console.log('Find the greatest common divisor of given numbers.');
-  game(name);
+const start = () => {
+  runGame('Find the greatest common divisor of given numbers.', gameConditions);
 };
 
-export default gcdGame;
+export default start;

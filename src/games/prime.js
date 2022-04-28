@@ -1,29 +1,32 @@
-import getNameAndGreet from '../cli.js';
 import getRandomInt from '../utils/getRandomInt.js';
-import checkGame from '../utils/checkGame.js';
-import getUserAnswer from '../utils/getUserAnswer.js';
-import showQuestion from '../utils/showQuestion.js';
-import isPrime from '../utils/isPrime.js';
+import runGame from '../index.js';
+import constants from '../constants.js';
 
-const game = (name) => {
-  const number = getRandomInt(1, 100);
-  const answer = isPrime(Number(number)) ? 'yes' : 'no';
-  const question = String(number);
-  showQuestion(question);
-  const userAnswer = getUserAnswer();
+const isPrime = (number) => {
+  if (number <= 1) {
+    return false;
+  }
 
-  checkGame({
-    userAnswer,
-    answer,
-    gameFn: game,
-    name,
-  });
+  for (let i = 2; i <= Math.sqrt(number); i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
 };
 
-const primeGame = () => {
-  const name = getNameAndGreet();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  game(name);
+const gameConditions = () => {
+  const number = getRandomInt(constants.MIN_NUMBER, constants.MAX_NUMBER);
+
+  return {
+    question: String(number),
+    answer: isPrime(Number(number)) ? 'yes' : 'no',
+  };
 };
 
-export default primeGame;
+const start = () => {
+  runGame("Answer 'yes' if given number is prime. Otherwise answer 'no'.", gameConditions);
+};
+
+export default start;
